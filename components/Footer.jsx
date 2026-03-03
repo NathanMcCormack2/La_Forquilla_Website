@@ -1,8 +1,10 @@
 import config from "../config";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Footer() {
   const { restaurant, hours, social } = config;
   const year = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="footer">
@@ -51,7 +53,7 @@ export default function Footer() {
           {/* Quick links */}
           <div>
             <div style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: "1.25rem" }}>
-              Quick Links
+             {t.footer.quickLinks}
             </div>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               {[
@@ -78,7 +80,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <div style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: "1.25rem" }}>
-              Contact
+              {t.footer.contact}
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               <p style={{ color: "var(--color-muted)", fontSize: "0.9rem", lineHeight: "1.6" }}>
@@ -113,11 +115,11 @@ export default function Footer() {
           }}
         >
           <p style={{ color: "var(--color-muted)", fontSize: "0.75rem", letterSpacing: "0.05em" }}>
-            © {year} {restaurant.name}. All rights reserved.
+            © {year} {restaurant.name}. {t.footer.rights}
           </p>
           <p style={{ color: "var(--color-border)", fontSize: "0.7rem", letterSpacing: "0.05em" }}>
             {/* Replace with your own brand if you want credit */}
-            Designed & built with care
+            {t.footer.credit}
           </p>
         </div>
       </div>

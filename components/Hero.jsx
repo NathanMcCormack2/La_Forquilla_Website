@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import config from "../config";
+import { useLanguage } from "../contexts/LanguageContext";
 
 // ─── REPLACE THIS URL with the client's hero image ──────────────────────────
 // Tip: Use a high-quality food/interior photo, ideally 1920×1080 or larger.
@@ -9,6 +10,7 @@ const HERO_IMAGE = "https://images.unsplash.com/photo-1414235077428-338989a2e8c0
 
 export default function Hero() {
   const bgRef = useRef(null);
+  const { t } = useLanguage();
 
   // Trigger the subtle zoom-out on load
   useEffect(() => {
@@ -43,8 +45,8 @@ export default function Hero() {
         <p className="hero-tagline">{config.restaurant.tagline}</p>
 
         <div className="hero-buttons">
-          <a href="#menu"   className="btn-primary">View Menu</a>
-          <a href="#findus" className="btn-outline">Get Directions</a>
+          <a href="#menu"   className="btn-primary">{t.hero.viewMenu}</a>
+          <a href="#findus" className="btn-outline">{t.hero.getDirections}</a>
         </div>
       </div>
 

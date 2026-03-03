@@ -1,11 +1,13 @@
 import useReveal from "../hooks/useReveal";
 import config from "../config";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const TODAY = new Date().toLocaleDateString("en-IE", { weekday: "long" });
 
 export default function FindUs() {
   const leftRef  = useReveal();
   const rightRef = useReveal();
+  const { t } = useLanguage();
 
   const { restaurant, hours } = config;
 
@@ -29,13 +31,13 @@ export default function FindUs() {
       >
         {/* Left — info */}
         <div ref={leftRef} className="reveal">
-          <span className="section-label">Visit Us</span>
-          <h2 style={{ fontSize: "clamp(2rem, 3vw, 2.8rem)" }}>Find Us</h2>
+          <span className="section-label">{t.findUs.sectionLabel}</span>
+          <h2 style={{ fontSize: "clamp(2rem, 3vw, 2.8rem)" }}>{t.findUs.heading}</h2>
           <div className="gold-line" />
 
           {/* Address */}
           <div style={{ marginBottom: "2.5rem" }}>
-            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: "0.5rem" }}>Address</p>
+            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: "0.5rem" }}>{t.findUs.address}</p>
             <p style={{ fontSize: "1.05rem", lineHeight: "1.6" }}>
               {restaurant.address.street}<br />
               {restaurant.address.city}<br />
@@ -45,7 +47,7 @@ export default function FindUs() {
 
           {/* Phone */}
           <div style={{ marginBottom: "2.5rem" }}>
-            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: "0.5rem" }}>Reservations</p>
+            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: "0.5rem" }}>{t.findUs.reservations}</p>
             <a
               href={`tel:${restaurant.phone}`}
               style={{ fontSize: "1.3rem", fontFamily: "'Playfair Display', serif", color: "var(--color-primary)" }}
@@ -56,7 +58,7 @@ export default function FindUs() {
 
           {/* Hours */}
           <div>
-            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: "1rem" }}>Opening Hours</p>
+            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: "1rem" }}>{t.findUs.openingHours}</p>
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <tbody>
                 {hours.map((h) => {
@@ -81,7 +83,7 @@ export default function FindUs() {
                         {h.day}
                         {isToday && (
                           <span style={{ fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-primary)", marginLeft: "0.5rem" }}>
-                            Today
+                            {t.findUs.today}
                           </span>
                         )}
                       </td>
@@ -94,7 +96,7 @@ export default function FindUs() {
                           fontWeight: 300,
                         }}
                       >
-                        {h.open === "Closed" ? "Closed" : `${h.open} – ${h.close}`}
+                        {h.open === "{t.findUs.closed}" ? "{t.findUs.closed}" : `${h.open} – ${h.close}`}
                       </td>
                     </tr>
                   );
@@ -126,7 +128,7 @@ export default function FindUs() {
             className="btn-outline"
             style={{ display: "block", textAlign: "center", marginTop: "1.5rem" }}
           >
-            Open in Google Maps
+            {t.findUs.openInMaps}
           </a>
         </div>
       </div>

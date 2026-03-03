@@ -1,5 +1,6 @@
 import useReveal from "../hooks/useReveal";
 import config from "../config";
+import { useLanguage } from "../contexts/LanguageContext";
 
 // ─── REPLACE these with the client's actual photos ───────────────────────────
 // Aim for a mix of: food close-ups, table settings, interior, team/chef shots
@@ -15,6 +16,7 @@ const GALLERY_IMAGES = [
 export default function Gallery() {
   const headerRef = useReveal();
   const gridRef   = useReveal();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -32,8 +34,8 @@ export default function Gallery() {
           className="reveal"
           style={{ textAlign: "center", marginBottom: "4rem" }}
         >
-          <span className="section-label">Visual Story</span>
-          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)" }}>Gallery</h2>
+          <span className="section-label">{t.gallery.sectionLabel}</span>
+          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)" }}>{t.gallery.heading}</h2>
           <div className="gold-line gold-line--center" />
         </div>
 

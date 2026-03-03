@@ -1,10 +1,12 @@
 import { useState } from "react";
 import useReveal from "../hooks/useReveal";
 import config from "../config";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Menu() {
   const [activeTab, setActiveTab] = useState(0);
   const headerRef = useReveal();
+  const { t } = useLanguage();
 
   const currentSection = config.menu[activeTab];
 
@@ -21,9 +23,9 @@ export default function Menu() {
           className="reveal"
           style={{ textAlign: "center", marginBottom: "4rem" }}
         >
-          <span className="section-label">What We Serve</span>
+          <span className="section-label">{t.menu.sectionLabel}</span>
           <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)" }}>
-            Our Menu
+            {t.menu.heading}
           </h2>
           <div className="gold-line gold-line--center" />
           <p style={{ color: "var(--color-muted)", maxWidth: "480px", margin: "0 auto", fontSize: "0.95rem" }}>
@@ -68,7 +70,7 @@ export default function Menu() {
             letterSpacing: "0.05em",
           }}
         >
-          Please inform your server of any dietary requirements or allergies before ordering.
+          {t.menu.allergen}
         </p>
       </div>
     </section>

@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import config from "../config";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const NAV_LINKS = [
-  { label: "Menu",    href: "#menu"    },
-  { label: "About",   href: "#about"   },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Find Us", href: "#findus"  },
-  { label: "Contact", href: "#contact" },
+  { label: t.nav.menu,    href: "#menu"    },
+  { label: t.nav.about,   href: "#about"   },
+  { label: t.nav.gallery, href: "#gallery" },
+  { label: t.nav.findUs,  href: "#findus"  },
+  { label: t.nav.contact, href: "#contact" },
 ];
 
 export default function Navbar() {
   const [scrolled,     setScrolled]     = useState(false);
   const [menuOpen,     setMenuOpen]     = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -54,6 +56,30 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+
+          <div style={{ display: "flex", border: "1px solid var(--color-border)", borderRadius: "2px", overflow: "hidden" }}>
+            {["en", "es", "ca"].map((code) => (
+              <button
+                key={code}
+                onClick={() => setLang(code)}
+                style={{
+                  padding: "0.3rem 0.65rem",
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "0.65rem",
+                  fontWeight: 500,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  border: "none",
+                  borderRight: code !== "ca" ? "1px solid var(--color-border)" : "none",
+                  cursor: "pointer",
+                  background: lang === code ? "var(--color-primary)" : "transparent",
+                  color:      lang === code ? "var(--color-background)" : "var(--color-muted)",
+                }}
+              >
+                {code.toUpperCase()}
+              </button>
+            ))}
+          </div>
 
           {/* Phone — desktop */}
           <a

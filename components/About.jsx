@@ -1,5 +1,6 @@
 import useReveal from "../hooks/useReveal";
 import config from "../config";
+import { useLanguage } from "../contexts/LanguageContext";
 
 // ─── REPLACE with client's interior / team photo ────────────────────────────
 const ABOUT_IMAGE = "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80";
@@ -8,6 +9,7 @@ const ABOUT_IMAGE = "https://images.unsplash.com/photo-1559339352-11d035aa65de?w
 export default function About() {
   const leftRef  = useReveal();
   const rightRef = useReveal();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -62,10 +64,10 @@ export default function About() {
 
         {/* Right — text */}
         <div ref={rightRef} className="reveal">
-          <span className="section-label">Our Story</span>
+          <span className="section-label">{t.about.sectionLabel}</span>
           <h2 style={{ fontSize: "clamp(2rem, 3vw, 2.8rem)", marginBottom: "0" }}>
-            Food made with<br />
-            <em>care & craft</em>
+            {t.about.heading1}<br />
+            <em>{t.about.heading2}</em>
           </h2>
           <div className="gold-line" />
           <p style={{ color: "var(--color-muted)", fontSize: "1rem", marginBottom: "1.5rem", lineHeight: "1.85" }}>
@@ -75,9 +77,9 @@ export default function About() {
           {/* Key facts row */}
           <div style={{ display: "flex", gap: "2.5rem", marginBottom: "2.5rem" }}>
             {[
-              { label: "Cuisine",     value: config.restaurant.cuisine },
-              { label: "Founded",     value: config.restaurant.founded },
-              { label: "Location",    value: config.restaurant.address.city },
+              { label: "{t.about.factCuisine}",     value: config.restaurant.cuisine },
+              { label: "{t.about.factFounded}",     value: config.restaurant.founded },
+              { label: "{t.about.factLocation}",    value: config.restaurant.address.city },
             ].map((fact) => (
               <div key={fact.label}>
                 <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: "0.3rem" }}>
@@ -91,7 +93,7 @@ export default function About() {
           </div>
 
           <a href="#menu" className="btn-primary">
-            Explore Our Menu
+            {t.about.cta}
           </a>
         </div>
       </div>

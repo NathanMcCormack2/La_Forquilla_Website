@@ -1,11 +1,13 @@
 import { useState } from "react";
 import useReveal from "../hooks/useReveal";
 import config from "../config";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Contact() {
   const [fields,   setFields]   = useState({ name: "", email: "", message: "" });
   const [status,   setStatus]   = useState("idle"); // idle | sending | success | error
   const ref = useReveal();
+  const { t } = useLanguage();
 
   const handleChange = (e) =>
     setFields((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -46,11 +48,11 @@ export default function Contact() {
           className="reveal"
           style={{ textAlign: "center", marginBottom: "4rem" }}
         >
-          <span className="section-label">Get in Touch</span>
-          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)" }}>Contact Us</h2>
+          <span className="section-label">{t.contact.sectionLabel}</span>
+          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)" }}>{t.contact.heading}</h2>
           <div className="gold-line gold-line--center" />
           <p style={{ color: "var(--color-muted)", fontSize: "0.95rem" }}>
-            Have a question, a large group booking, or a special occasion?<br />
+            {t.contact.subheading}<br />
             We&apos;d love to hear from you.
           </p>
         </div>
@@ -65,30 +67,30 @@ export default function Contact() {
             }}
           >
             <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.5rem", marginBottom: "0.75rem", fontStyle: "italic" }}>
-              Thank you!
+              {t.contact.successTitle}
             </div>
             <p style={{ color: "var(--color-muted)", fontSize: "0.9rem" }}>
-              We&apos;ve received your message and will be in touch shortly.
+              {t.contact.successBody}
             </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
               <div className="form-group">
-                <label className="form-label" htmlFor="name">Name</label>
+                <label className="form-label" htmlFor="name">{t.contact.name}</label>
                 <input
                   id="name"
                   name="name"
                   type="text"
                   required
                   className="form-input"
-                  placeholder="Your name"
+                  placeholder="{t.contact.namePlaceholder}"
                   value={fields.name}
                   onChange={handleChange}
                 />
               </div>
               <div className="form-group">
-                <label className="form-label" htmlFor="email">Email</label>
+                <label className="form-label" htmlFor="email">{t.contact.email}</label>
                 <input
                   id="email"
                   name="email"
@@ -103,13 +105,13 @@ export default function Contact() {
             </div>
 
             <div className="form-group">
-              <label className="form-label" htmlFor="message">Message</label>
+              <label className="form-label" htmlFor="message">{t.contact.message}</label>
               <textarea
                 id="message"
                 name="message"
                 required
                 className="form-textarea"
-                placeholder="Tell us how we can help..."
+                placeholder="{t.contact.messagePlaceholder}"
                 value={fields.message}
                 onChange={handleChange}
               />
@@ -117,7 +119,7 @@ export default function Contact() {
 
             {status === "error" && (
               <p style={{ color: "#e07070", fontSize: "0.85rem", marginBottom: "1rem" }}>
-                Something went wrong. Please try again or call us directly.
+                {t.contact.errorMsg}
               </p>
             )}
 
@@ -127,7 +129,7 @@ export default function Contact() {
               style={{ width: "100%", textAlign: "center", opacity: status === "sending" ? 0.6 : 1 }}
               disabled={status === "sending"}
             >
-              {status === "sending" ? "Sending..." : "Send Message"}
+              {status === "sending" ? "{t.contact.sending}" : "{t.contact.send}"}
             </button>
           </form>
         )}
