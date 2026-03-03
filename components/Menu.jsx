@@ -4,8 +4,7 @@ import config from "../config";
 
 export default function Menu() {
   const [activeTab, setActiveTab] = useState(0);
-  const headerRef  = useReveal();
-  const itemsRef   = useReveal();
+  const headerRef = useReveal();
 
   const currentSection = config.menu[activeTab];
 
@@ -47,11 +46,7 @@ export default function Menu() {
         </div>
 
         {/* Items grid */}
-        <div
-          ref={itemsRef}
-          className="reveal reveal-stagger menu-items"
-          key={activeTab} // re-trigger animation on tab change
-        >
+        <div className="menu-items" style={{ columnGap: "3rem" }}>
           {currentSection.items.map((item) => (
             <div key={item.name} className="menu-item">
               <div className="menu-item-info">
