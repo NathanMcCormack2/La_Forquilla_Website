@@ -77,9 +77,9 @@ export default function About() {
           {/* Key facts row */}
           <div style={{ display: "flex", gap: "2.5rem", marginBottom: "2.5rem" }}>
             {[
-              { label: "{t.about.factCuisine}",     value: config.restaurant.cuisine },
-              { label: "{t.about.factFounded}",     value: config.restaurant.founded },
-              { label: "{t.about.factLocation}",    value: config.restaurant.address.city },
+              { label: t.about.factCuisine,     value: config.restaurant.cuisine },
+              { label: t.about.factFounded,     value: config.restaurant.founded },
+              { label: t.about.factLocation,    value: config.restaurant.address.city },
             ].map((fact) => (
               <div key={fact.label}>
                 <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-muted)", marginBottom: "0.3rem" }}>

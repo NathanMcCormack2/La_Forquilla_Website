@@ -7,12 +7,12 @@ const config = {
 
   // --- BUSINESS INFO ---
   restaurant: {
-    name: "Ember & Oak",
+    name: "La Forquilla",
     tagline: "Wood-fired cooking, honest ingredients, unforgettable evenings.",
     description:
       "Nestled in the heart of Dublin, Ember & Oak has been bringing people together around great food since 2018. We source everything locally, cook everything over fire, and pour our hearts into every plate.",
     founded: "2018",
-    cuisine: "Modern Irish",
+    cuisine: "Classic Spanish",
     phone: "+353 1 234 5678",
     email: "hello@emberandoak.ie",
     address: {
@@ -24,13 +24,13 @@ const config = {
 
   // --- OPENING HOURS ---
   hours: [
-    { day: "Monday",    open: "Closed",   close: "" },
-    { day: "Tuesday",   open: "12:00",    close: "22:00" },
-    { day: "Wednesday", open: "12:00",    close: "22:00" },
-    { day: "Thursday",  open: "12:00",    close: "22:30" },
-    { day: "Friday",    open: "12:00",    close: "23:00" },
-    { day: "Saturday",  open: "11:00",    close: "23:00" },
-    { day: "Sunday",    open: "11:00",    close: "21:00" },
+    { day: "Lunes",    open: "Cerrado",   close: "" },
+    { day: "Martes",   open: "12:00",    close: "22:00" },
+    { day: "Miercoles", open: "12:00",    close: "22:00" },
+    { day: "Jueves",  open: "12:00",    close: "22:30" },
+    { day: "Viernes",    open: "12:00",    close: "23:00" },
+    { day: "Sabados",  open: "11:00",    close: "23:00" },
+    { day: "Domingo",    open: "11:00",    close: "21:00" },
   ],
 
   // --- MENU ---

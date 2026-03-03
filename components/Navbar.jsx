@@ -52,7 +52,7 @@ export default function Navbar() {
           {/* Right side: language switcher + phone */}
           <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }} className="hidden-mobile">
             <div style={{ display: "flex", border: "1px solid var(--color-border)", borderRadius: "2px", overflow: "hidden" }}>
-              {["en", "es", "ca"].map((code) => (
+              {["ca", "es", "en"].map((code) => (
                 <button
                   key={code}
                   onClick={() => setLang(code)}

@@ -57,11 +57,11 @@ export default function Footer() {
             </div>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               {[
-                { label: "Menu",    href: "#menu" },
-                { label: "About",   href: "#about" },
-                { label: "Gallery", href: "#gallery" },
-                { label: "Find Us", href: "#findus" },
-                { label: "Contact", href: "#contact" },
+                { label: t.nav.menu,    href: "#menu"    },
+                { label: t.nav.about,   href: "#about"   },
+                { label: t.nav.gallery, href: "#gallery" },
+                { label: t.nav.findUs,  href: "#findus"  },
+                { label: t.nav.contact, href: "#contact" },
               ].map((link) => (
                 <li key={link.href}>
                   <a

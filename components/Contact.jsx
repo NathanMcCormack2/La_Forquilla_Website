@@ -53,7 +53,6 @@ export default function Contact() {
           <div className="gold-line gold-line--center" />
           <p style={{ color: "var(--color-muted)", fontSize: "0.95rem" }}>
             {t.contact.subheading}<br />
-            We&apos;d love to hear from you.
           </p>
         </div>
 
@@ -84,7 +83,7 @@ export default function Contact() {
                   type="text"
                   required
                   className="form-input"
-                  placeholder="{t.contact.namePlaceholder}"
+                  placeholder= {t.contact.namePlaceholder}
                   value={fields.name}
                   onChange={handleChange}
                 />
@@ -111,7 +110,7 @@ export default function Contact() {
                 name="message"
                 required
                 className="form-textarea"
-                placeholder="{t.contact.messagePlaceholder}"
+                placeholder= {t.contact.messagePlaceholder}
                 value={fields.message}
                 onChange={handleChange}
               />
@@ -129,7 +128,7 @@ export default function Contact() {
               style={{ width: "100%", textAlign: "center", opacity: status === "sending" ? 0.6 : 1 }}
               disabled={status === "sending"}
             >
-              {status === "sending" ? "{t.contact.sending}" : "{t.contact.send}"}
+              {status === "sending" ? t.contact.sending : t.contact.send}
             </button>
           </form>
         )}
