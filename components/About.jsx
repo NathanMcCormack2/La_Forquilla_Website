@@ -3,7 +3,7 @@ import config from "../config";
 import { useLanguage } from "../contexts/LanguageContext";
 
 // ─── REPLACE with client's interior / team photo ────────────────────────────
-const ABOUT_IMAGE = "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80";
+const ABOUT_IMAGE = "/images/Oven.jpg";
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function About() {

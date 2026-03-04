@@ -5,7 +5,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 // ─── REPLACE THIS URL with the client's hero image ──────────────────────────
 // Tip: Use a high-quality food/interior photo, ideally 1920×1080 or larger.
 // You can use Unsplash for placeholder images: https://unsplash.com
-const HERO_IMAGE = "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=85";
+const HERO_IMAGE = "/images/Inside.jpg";
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function Hero() {

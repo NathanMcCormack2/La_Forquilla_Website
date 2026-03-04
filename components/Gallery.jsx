@@ -5,11 +5,11 @@ import { useLanguage } from "../contexts/LanguageContext";
 // ─── REPLACE these with the client's actual photos ───────────────────────────
 // Aim for a mix of: food close-ups, table settings, interior, team/chef shots
 const GALLERY_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80", alt: "Signature dish" },
-  { src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80", alt: "Restaurant interior" },
-  { src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80", alt: "Wood-fired dish" },
-  { src: "https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=600&q=80", alt: "Table setting" },
-  { src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80", alt: "Evening ambience" },
+  { src: "/images/HamCheesejpg.jpg"},
+  { src: "/images/Dessert2.jpg"},
+  { src: "/images/Octopus.jpg"},
+  { src: "/images/Dessert.jpg"},
+  { src: "/images/Sausages.jpg"},
 ];
 // ─────────────────────────────────────────────────────────────────────────────
 

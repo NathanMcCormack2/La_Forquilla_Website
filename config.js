@@ -8,17 +8,17 @@ const config = {
   // --- BUSINESS INFO ---
   restaurant: {
     name: "La Forquilla",
-    tagline: "Wood-fired cooking, honest ingredients, unforgettable evenings.",
+    tagline: "Cocció a llenya, ingredients honestos, nits inoblidables.",
     description:
-      "Nestled in the heart of Dublin, Ember & Oak has been bringing people together around great food since 2018. We source everything locally, cook everything over fire, and pour our hearts into every plate.",
-    founded: "2018",
-    cuisine: "Classic Spanish",
-    phone: "+353 1 234 5678",
-    email: "hello@emberandoak.ie",
+      "Restaurant familiar al cor de Ginestar.",
+    founded: "2012",
+    cuisine: "Català clàssic",
+    phone: "+353 555 555 5555",
+    email: "example@laforquilla.es",
     address: {
-      street: "14 Drury Street",
-      city: "Dublin 2",
-      country: "Ireland",
+      street: "Plaça del pou, 7, 43748 Ginestar",
+      city: "Tarragona",
+      country: "Spain",
     },
   },
 
@@ -37,58 +37,84 @@ const config = {
   // Add/remove sections and items as needed
   menu: [
     {
-      section: "Starters",
+      section: "Entsants",
       items: [
-        { name: "Seared Scallops",      price: "€14", description: "Cauliflower purée, crispy capers, brown butter" },
-        { name: "Chicken Liver Parfait",price: "€11", description: "Toasted brioche, pickled shallots, chutney" },
-        { name: "Roasted Beetroot",     price: "€10", description: "Whipped goat's cheese, candied walnuts, aged balsamic" },
-        { name: "Soup of the Day",      price: "€8",  description: "Freshly made, served with sourdough bread" },
+        { name: "Veal Ribs",      price: "€14", description: "Seared Scallops" },
+        { name: "Chicken Liver Parfait",price: "€11", description: "Chicken Liver Parfait" },
+        { name: "Roasted Beetroot",     price: "€10", description: "Roasted Beetroot" },
+        { name: "Soup of the Day",      price: "€8",  description: "Soup of the Day" },
       ],
     },
     {
-      section: "Mains",
+      section: "Tapas",
       items: [
-        { name: "Dry-Aged Ribeye",      price: "€34", description: "28-day aged, chimichurri, triple-cooked chips" },
-        { name: "Roast Hake",           price: "€26", description: "Saffron broth, samphire, crushed new potatoes" },
-        { name: "Wild Mushroom Risotto",price: "€22", description: "Truffle oil, aged parmesan, crispy shallots" },
-        { name: "Roast Half Chicken",   price: "€24", description: "Confit leg, smoked butter mash, braised greens" },
+        { name: "Patatas Bravas",      price: "€6" },
+        { name: "Bunyols de bacalla",price: "€6", description: "Cod Fritters" },
+        { name: "Croquetes de pernil", price: "€5.50", description: "Ham Croquettes" },
+        { name: "Croquetes de rabo de toro",      price: "€7.50" },
+        { name: "Nachos", price: "€7" },
+        { name: "Calamars", price: "€6", description: "Roman style squid" },
+        { name: "Rabas de calamar",price: "€7", description: "Squid Rings" },
+        { name: "Aros de ceba",price: "€5.50", description: "Onion Rings" },
+        { name: "Tempura de verdura",price: "€9" },
       ],
     },
     {
-      section: "Desserts",
+      section: "Plats Combinats",
       items: [
-        { name: "Warm Chocolate Fondant", price: "€9", description: "Vanilla ice cream, honeycomb" },
-        { name: "Crème Brûlée",           price: "€8", description: "Classic vanilla, shortbread biscuit" },
-        { name: "Seasonal Cheeseboard",   price: "€13", description: "Selection of Irish cheeses, crackers, chutney" },
-        { name: "Affogato",               price: "€7", description: "Espresso, vanilla gelato, amaretti" },
+        { name: "Ou + bacó + patates", price: "€9", description: "Eggs + Bacon + Chips"  },
+        { name: "Calamars + Patates",price: "€10", description: "Roman Squid + Chips" },
+        { name: "Escalopa + Patates", price: "€10", description: "Chicken Scalope + Chips" },
+        { name: "Croquetes + Patates", price: "€7.50",  description: "Ham Croquette + Chips" },
+        { name: "Ous Estrellats", price: "€8",  description: "Eggs + Ham + Chips" },
+        { name: "Lluç arrebossat + Patates", price: "€10", description: "Baled Hake + Chips" },
       ],
     },
     {
-      section: "Drinks",
+      section: "Carns a la brasa",
       items: [
-        { name: "House Red / White",   price: "€8",  description: "125ml glass, ask for today's selection" },
-        { name: "Craft Beer",          price: "€6",  description: "Rotating local selection on draught" },
-        { name: "Soft Drinks",         price: "€3",  description: "Coke, 7Up, sparkling / still water" },
-        { name: "Irish Coffee",        price: "€8",  description: "Jameson, fresh cream, brown sugar" },
+        { name: "Xurrasco", price: "€12.50", description: "Veal Ribs" },
+        { name: "Llonganissa", price: "€9.50", description: "Sausage" },
+        { name: "Corder",price: "€13", description: "Lamb" },
+        { name: "Pollastre",   price: "€8", description: "Chicken" },
+        { name: "Llom", price: "€7.50", description: "Pork Tendorloin" },
+        { name: "Xistorra", price: "€7.50", description: "Red Sausage" },
+        { name: "Botifarra d'arrós", price: "€8", description: "Rice Sausage" },
+        { name: "Bistec", price: "€11.50", description: "Veal Steak" },
+        { name: "Entrecot", price: "€19", description: "Beef Steak" },
+        { name: "Conill", price: "€11", description: "Rabbit" },
+      ],
+    },
+    {
+      section: "Postres",
+      items: [
+        { name: "Coulant de Xocolata", price: "€5.50", description: "Chocolate Souffle" },
+        { name: "Pastís de Formatge",           price: "€5.50", description: "Cheesecake" },
+        { name: "Seasonal Cheeseboard",   price: "€5.80", description: "Lemon Sorbet in Lemon Shell" },
+        { name: "Affogato",               price: "€4.50", description: "Vanilla & Chocolate Icecream with Almond" },
+        { name: "Crème Brûlée",           price: "€4.50", description: "Honey & Curd" },
+        { name: "Crème Brûlée",           price: "€4", description: "Flan with Cream" },
+        { name: "Crème Brûlée",           price: "€4.50", description: "Chocalate Truffles with Cream" },
+        { name: "Crème Brûlée",           price: "€5.50", description: "Nuts with Mitsela" },
       ],
     },
   ],
 
   // --- SOCIAL MEDIA ---
   social: {
-    instagram: "https://instagram.com/emberandoak",
-    facebook:  "https://facebook.com/emberandoak",
+    instagram: "https://www.instagram.com/braserialaforquilla?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    //facebook:  "https://facebook.com/emberandoak",
     // twitter: "https://twitter.com/yourhandle",  // uncomment if needed
   },
 
   // --- GOOGLE MAPS EMBED ---
   // Get this from: maps.google.com → Share → Embed a map → copy the src URL only
   mapEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.9!2d-6.2603!3d53.3418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDIwJzMwLjUiTiA2wrAxNSc0MS4xIlc!5e0!3m2!1sen!2sie!4v1234567890",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.2269453458084!2d0.6321106760422293!3d41.042165921345834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a127e57d3fe3c5%3A0xdd23c7983e33f0f1!2sBar%20restaurante%20La%20Forquilla!5e0!3m2!1sen!2sie!4v1772662478480!5m2!1sen!2sie",
 
   // --- FORMSPREE CONTACT FORM ---
   // Sign up at formspree.io, create a form, paste the endpoint here
-  formspreeEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
+  formspreeEndpoint: "https://formspree.io/f/xdalqqbq",
 
   // --- THEME COLOURS ---
   // These map to CSS variables in globals.css

@@ -48,7 +48,7 @@ export default function Menu() {
         </div>
 
         {/* Items grid */}
-        <div className="menu-items" style={{ columnGap: "3rem" }}>
+        <div key={activeTab} className="menu-items" style={{ columnGap: "3rem" }}>
           {currentSection.items.map((item) => (
             <div key={item.name} className="menu-item">
               <div className="menu-item-info">
